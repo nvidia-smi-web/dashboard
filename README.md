@@ -51,7 +51,7 @@ Core UI (public):
 - `NEXT_PUBLIC_SITE_DESCRIPTION` – Meta description
 - `NEXT_PUBLIC_NO_NEED_LOGIN` – If `true`, disables login and middleware auth
 - `NEXT_PUBLIC_SERVERS_ID` – Comma-separated server IDs shown on homepage (e.g., `s1,s2`)
-- `NEXT_PUBLIC_CUSTOM_ELEMENTS` – JSON array for custom top-of-page elements. See `CUSTOM_ELEMENTS_GUIDE.md`
+- `NEXT_PUBLIC_CUSTOM_ELEMENTS` – JSON array for custom top-of-page elements. See [CUSTOM_ELEMENTS_GUIDE.md](CUSTOM_ELEMENTS_GUIDE.md) for details.
 - `NEXT_PUBLIC_CHART_DATA_LENGTH` – Samples kept in charts (default 200)
 
 Authentication:
