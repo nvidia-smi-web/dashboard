@@ -6,7 +6,7 @@ GPU monitoring dashboard for multi-server clusters, built with Next.js 14, Ant D
 
 | Light | Dark |
 | --- | --- |
-| ![Light UI](assets/light.jpg) | ![Dark UI](assets/dark.jpg) |
+| ![Light UI](assets/light.png) | ![Dark UI](assets/dark.png) |
 
 Features:
 - Email verification login with JWT (optional, can be disabled)
