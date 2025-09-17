@@ -1,0 +1,34 @@
+services:
+  dashboard:
+    image: do1e/nvidia-smi-web-dashboard
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+    env_file:
+      - .env
+    environment:
+      - REDIS_URL=redis://redis-dashboard:6379
+    volumes:
+      - ./data/log:/app/data/log
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - redis
+    networks:
+      - dashboard-network
+
+  redis:
+    image: redis:alpine
+    container_name: redis-dashboard
+    hostname: redis-dashboard
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - ./data/redis:/data
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - dashboard-network
+
+networks:
+  dashboard-network:
+    driver: bridge
