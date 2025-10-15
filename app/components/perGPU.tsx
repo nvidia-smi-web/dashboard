@@ -40,7 +40,7 @@ const renderProgress = (percent: number) => (
   <Progress
     percent={percent}
     percentPosition={{ align: 'start', type: 'outer' }}
-    strokeLinecap="butt"
+    strokeLinecap="round"
     success={{ strokeColor: getProgressColor(percent) }}
     size={{ height: 15 }}
     strokeColor={getProgressColor(percent)}
