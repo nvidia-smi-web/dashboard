@@ -54,8 +54,22 @@ const renderProgress = (percent: number) => (
 
 const renderInfo = (data: GPUInfoType) => (
   <div>
-    <div className="mb-2">
+    <div className="mb-2 flex justify-between items-center">
       <div className="font-medium">GPU{data.idx} - {data.name}</div>
+      <div className="flex gap-4">
+        <div className="text-sm">
+          <span className="font-medium">Power: </span>{data.power_status}
+        </div>
+        <div className="text-sm">
+          <span className="font-medium">Fan: </span>{data.fan_speed}%
+        </div>
+        <div className="text-sm">
+          <span className="font-medium">Temp: </span>
+          <span style={{ color: getTemperatureColor(data.temperature) }}>
+            {data.temperature}°C
+          </span>
+        </div>
+      </div>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div className="flex items-center gap-x-3">
@@ -68,11 +82,6 @@ const renderInfo = (data: GPUInfoType) => (
       <div className="flex items-center gap-x-3">
         <div className="whitespace-nowrap">Utilization:</div>
         <div className="flex-1">{renderProgress(data.gpu_utilization)}</div>
-        <div className="whitespace-nowrap text-sm">
-          <span style={{ color: getTemperatureColor(data.temperature) }}>
-            {data.temperature}°C
-          </span>
-        </div>
       </div>
     </div>
   </div>
